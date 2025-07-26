@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Love</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+
+    #lock-screen {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: #000;
+    }
+
+    #main-content {
+      display: none;
+      padding: 20px;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff6b81;
+      color: white;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 90%;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5em;
+      }
+      p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="lock-screen">
+    <h2>Enter Password to View</h2>
+    <input type="password" id="password" placeholder="Password"/>
+    <button onclick="checkPassword()">Unlock</button>
+    <p id="error" style="color: red; display: none;">Wrong password! Try again.</p>
+  </div>
+
+  <div id="main-content">
+    <h1>For the One I Love 💖</h1>
+    <p>In every heartbeat, in every silent moment, I find you. You are the peace to my chaos, the smile in my soul.</p>
+    <img src="Evening Stroll Under Moonlight.png" alt="Evening Walk Image">
+    <p>This night… under the stars and moonlight… it's always you and me. Forever. 🌙</p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const pass = document.getElementById("password").value;
+      if (pass === "mylove123") {
+        document.getElementById("lock-screen").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      } else {
+        document.getElementById("error").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
